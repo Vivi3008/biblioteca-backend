@@ -17,7 +17,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(routes)
-app.listen(3300)
+app.listen(process.env.PORT || 3300)
 
 //conectando com o bd
 mongoose.connect(env.MONGO_URI, {
