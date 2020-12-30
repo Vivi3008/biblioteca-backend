@@ -32,10 +32,12 @@ export default {
         try {
         await book.save()
         res.send(book)
+        return true
 
         } catch (error) {
             res.send('Erro interno no servidor!')
             console.error(error)
+            return false
         }  
     },
 
@@ -46,10 +48,11 @@ export default {
         try {
          const update = await Book.findByIdAndUpdate(id, dataUpdate, { new: true })
          if(update) res.send(dataUpdate)
-
+            return true
         } catch (error) {
             res.send('Erro interno no servidor!')
           console.error(error)
+          return false
         }
     },
 
@@ -58,10 +61,12 @@ export default {
 
         try {
             await book?.remove()
-            return res.send('Livro deletado com sucesso!')
+            res.send('Livro deletado com sucesso!')
+            return true
         } catch (error) {
             res.send('Erro interno no servidor!')
             console.error(error)
+            return false
         }
 
     }

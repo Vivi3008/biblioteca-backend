@@ -100,12 +100,12 @@ exports.default = {
                     case 2:
                         _a.sent();
                         res.send(book);
-                        return [3 /*break*/, 4];
+                        return [2 /*return*/, true];
                     case 3:
                         error_3 = _a.sent();
                         res.send('Erro interno no servidor!');
                         console.error(error_3);
-                        return [3 /*break*/, 4];
+                        return [2 /*return*/, false];
                     case 4: return [2 /*return*/];
                 }
             });
@@ -127,12 +127,12 @@ exports.default = {
                         update = _a.sent();
                         if (update)
                             res.send(dataUpdate);
-                        return [3 /*break*/, 4];
+                        return [2 /*return*/, true];
                     case 3:
                         error_4 = _a.sent();
                         res.send('Erro interno no servidor!');
                         console.error(error_4);
-                        return [3 /*break*/, 4];
+                        return [2 /*return*/, false];
                     case 4: return [2 /*return*/];
                 }
             });
@@ -152,12 +152,13 @@ exports.default = {
                         return [4 /*yield*/, (book === null || book === void 0 ? void 0 : book.remove())];
                     case 3:
                         _a.sent();
-                        return [2 /*return*/, res.send('Livro deletado com sucesso!')];
+                        res.send('Livro deletado com sucesso!');
+                        return [2 /*return*/, true];
                     case 4:
                         error_5 = _a.sent();
                         res.send('Erro interno no servidor!');
                         console.error(error_5);
-                        return [3 /*break*/, 5];
+                        return [2 /*return*/, false];
                     case 5: return [2 /*return*/];
                 }
             });
